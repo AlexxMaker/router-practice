@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
-class Life extends Component {
+class Life extends PureComponent {
     // 1 get default props
 
     // 2 set default state
@@ -8,42 +8,42 @@ class Life extends Component {
     state = {
         title: 'Life cycles'
     }
-        // 5 After jsx
-        componentDidMount() {
-            console.log('5 After render')
-            // document.querySelector('h3').style.color = 'red'
-        }
-    // 3 Before render
-    componentWillMount() {
-        console.log('3 Before render');
-    }
+    //     // 5 After jsx
+    //     componentDidMount() {
+    //         console.log('5 After render')
+    //         // document.querySelector('h3').style.color = 'red'
+    //     }
+    // // 3 Before render
+    // componentWillMount() {
+    //     console.log('3 Before render');
+    // }
 
-    componentWillUpdate() {
-        console.log('BEFORE UPDATE');
-    }
+    // componentWillUpdate() {
+    //     console.log('BEFORE UPDATE');
+    // }
 
-    componentDidUpdate() {
-        console.log('AFTER UPDATE');
-    }
+    // componentDidUpdate() {
+    //     console.log('AFTER UPDATE');
+    // }
 
-    shouldComponentUpdate(nextProps, nextState) {
-        console.log(this.state.title);
-        console.log(nextState.title);
-        if(nextState.title === 'something else') {
-            return false;
-        }
-            return true;
-    }
+    // shouldComponentUpdate(nextProps, nextState) {
+    //     console.log(this.state.title);
+    //     console.log(nextState.title);
+    //     if(nextState.title === this.state.title) {
+    //         return false;
+    //     }
+    //         return true;
+    // }
 
-    componentWillReceiveProps() {
-        console.log('BEFORE RECEIVE PROPS');
-    }
+    // componentWillReceiveProps() {
+    //     console.log('BEFORE RECEIVE PROPS');
+    // }
 
-    componentWillUnmount() {
-        console.log('UNMOUNT')
-    }
+    // componentWillUnmount() {
+    //     console.log('UNMOUNT')
+    // }
 
-    // 4 Render jsx 
+    // // 4 Render jsx 
     render() {
         console.log('RENDER')
         // console.log(this.props);
@@ -51,7 +51,7 @@ class Life extends Component {
             <div>
             <h3>{this.state.title}</h3>
             <div onClick={
-                () => this.setState({title: 'something elsee'})}
+                () => this.setState({title: 'something else'})}
                 >CLICK TO CHANGE</div>
             </div>
         );
