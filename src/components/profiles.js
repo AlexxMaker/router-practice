@@ -1,14 +1,19 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
+import Card from '../hoc/card'
+import Auth from '../hoc/auth'
+
 const Profiles = (props) => {
 
     return (
-        <div>
-            <NavLink to={{
-                pathname: `${props.match.url}/posts`
-            }}>Take me to profile/posts</NavLink>
-        </div>
+        <Auth>
+            <Card>
+                <NavLink to={{
+                    pathname: `${props.match.url}/posts`
+                }}>Take me to profile/posts</NavLink>
+            </Card>
+        </Auth>
     );
 }
 
